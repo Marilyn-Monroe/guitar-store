@@ -13,7 +13,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/yourusername/guitar-shop.git
+   git clone https://github.com/Marilyn-Monroe/guitar-store
    cd guitar-shop
 
 2. Разверните окружение для разработки:
