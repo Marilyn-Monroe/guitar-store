@@ -1,0 +1,20 @@
+type: object
+required:
+  - rating
+  - guitar_id
+  - created_by
+properties:
+  advantages:
+    type: string
+  disadvantages:
+    type: string
+  comments:
+    type: string
+  rating:
+    type: integer
+    format: int64
+    minimum: 1
+    maximum: 5
+  guitar_id:
+    type: string
+    format: uuid

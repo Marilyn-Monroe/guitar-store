@@ -1,0 +1,73 @@
+get:
+  summary: Find reviews by guitarId
+  operationId: findReviewsByGuitarId
+  tags:
+    - review
+  parameters:
+    - in: query
+      name: guitarId
+      schema:
+        type: string
+        format: uuid
+      required: true
+      description: ID of the guitar
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/order.yaml
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/page.yaml
+  responses:
+    200:
+      description: List of reviews for the specified guitar
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Reviews.yaml
+      headers:
+        X-Pagination-Count:
+          $ref: ../components/headers/XPaginationCount.yaml
+        X-Pagination-Page:
+          $ref: ../components/headers/XPaginationPage.yaml
+        X-Pagination-Limit:
+          $ref: ../components/headers/XPaginationLimit.yaml
+    400:
+      $ref: ../components/responses/400BadRequest.yaml
+    401:
+      $ref: ../components/responses/401Unauthorized.yaml
+    403:
+      $ref: ../components/responses/403Forbidden.yaml
+    404:
+      $ref: ../components/responses/404NotFound.yaml
+    409:
+      $ref: ../components/responses/409Conflict.yaml
+    429:
+      $ref: ../components/responses/429TooManyRequests.yaml
+    500:
+      $ref: ../components/responses/500InternalServerError.yaml
+    503:
+      $ref: ../components/responses/503ServiceUnavailable.yaml
+post:
+  summary: Create a new review
+  operationId: createReview
+  tags:
+    - review
+  requestBody:
+    $ref: ../components/requestBodies/CreateReview.yaml
+  responses:
+    201:
+      $ref: ../components/responses/SuccessMessage.yaml
+    400:
+      $ref: ../components/responses/400BadRequest.yaml
+    401:
+      $ref: ../components/responses/401Unauthorized.yaml
+    403:
+      $ref: ../components/responses/403Forbidden.yaml
+    404:
+      $ref: ../components/responses/404NotFound.yaml
+    409:
+      $ref: ../components/responses/409Conflict.yaml
+    429:
+      $ref: ../components/responses/429TooManyRequests.yaml
+    500:
+      $ref: ../components/responses/500InternalServerError.yaml
+    503:
+      $ref: ../components/responses/503ServiceUnavailable.yaml

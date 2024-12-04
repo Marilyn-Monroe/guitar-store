@@ -1,0 +1,5 @@
+description: Authentication credentials were missing or incorrect.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Message.yaml

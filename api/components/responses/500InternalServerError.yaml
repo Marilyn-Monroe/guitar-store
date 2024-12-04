@@ -1,0 +1,5 @@
+description: Something is broken.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Message.yaml

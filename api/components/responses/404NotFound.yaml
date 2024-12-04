@@ -1,0 +1,5 @@
+description: The URI requested is invalid or the resource requested does not exists.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Message.yaml

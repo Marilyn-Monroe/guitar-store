@@ -1,0 +1,31 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+  description:
+    type: string
+  sku:
+    type: string
+  price:
+    type: integer
+    format: int64
+  image:
+    type: string
+    format: uri
+  type:
+    type: string
+  strings:
+    type: integer
+    format: int64
+  quantity_available:
+    type: integer
+    format: int64
+  average_rating:
+    type: number
+    format: float
+  created_at:
+    type: string
+    format: date-time

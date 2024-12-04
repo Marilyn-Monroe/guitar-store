@@ -1,0 +1,62 @@
+get:
+  summary: Find all guitars
+  operationId: findAllGuitars
+  tags:
+    - guitar
+  parameters:
+    - in: query
+      name: type
+      schema:
+        type: string
+      description: Filter guitars by type
+    - in: query
+      name: strings
+      schema:
+        type: integer
+      description: Filter guitars by the number of strings
+    - in: query
+      name: min_price
+      schema:
+        type: number
+        format: float
+      description: Filter guitars with a price greater than or equal to this value
+    - in: query
+      name: max_price
+      schema:
+        type: number
+        format: float
+      description: Filter guitars with a price less than or equal to this value
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/order.yaml
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/page.yaml
+  responses:
+    200:
+      description: List of guitars
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Guitars.yaml
+      headers:
+        X-Pagination-Count:
+          $ref: ../components/headers/XPaginationCount.yaml
+        X-Pagination-Page:
+          $ref: ../components/headers/XPaginationPage.yaml
+        X-Pagination-Limit:
+          $ref: ../components/headers/XPaginationLimit.yaml
+    400:
+      $ref: ../components/responses/400BadRequest.yaml
+    401:
+      $ref: ../components/responses/401Unauthorized.yaml
+    403:
+      $ref: ../components/responses/403Forbidden.yaml
+    404:
+      $ref: ../components/responses/404NotFound.yaml
+    409:
+      $ref: ../components/responses/409Conflict.yaml
+    429:
+      $ref: ../components/responses/429TooManyRequests.yaml
+    500:
+      $ref: ../components/responses/500InternalServerError.yaml
+    503:
+      $ref: ../components/responses/503ServiceUnavailable.yaml

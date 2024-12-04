@@ -1,0 +1,69 @@
+get:
+  summary: Get cart items for a user
+  operationId: getCartItemsByUserId
+  tags:
+    - cartItem
+  parameters:
+    - in: query
+      name: userId
+      schema:
+        type: string
+        format: uuid
+      required: true
+      description: ID of the user whose cart items are to be retrieved
+  responses:
+    200:
+      description: List of cart items for the specified user
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CartItems.yaml
+      headers:
+        X-Pagination-Count:
+          $ref: ../components/headers/XPaginationCount.yaml
+        X-Pagination-Page:
+          $ref: ../components/headers/XPaginationPage.yaml
+        X-Pagination-Limit:
+          $ref: ../components/headers/XPaginationLimit.yaml
+    400:
+      $ref: ../components/responses/400BadRequest.yaml
+    401:
+      $ref: ../components/responses/401Unauthorized.yaml
+    403:
+      $ref: ../components/responses/403Forbidden.yaml
+    404:
+      $ref: ../components/responses/404NotFound.yaml
+    409:
+      $ref: ../components/responses/409Conflict.yaml
+    429:
+      $ref: ../components/responses/429TooManyRequests.yaml
+    500:
+      $ref: ../components/responses/500InternalServerError.yaml
+    503:
+      $ref: ../components/responses/503ServiceUnavailable.yaml
+patch:
+  summary: Edit a cart item
+  operationId: editCartItem
+  tags:
+    - cartItem
+  requestBody:
+    $ref: ../components/requestBodies/EditCartItem.yaml
+  responses:
+    200:
+      $ref: ../components/responses/SuccessMessage.yaml
+    400:
+      $ref: ../components/responses/400BadRequest.yaml
+    401:
+      $ref: ../components/responses/401Unauthorized.yaml
+    403:
+      $ref: ../components/responses/403Forbidden.yaml
+    404:
+      $ref: ../components/responses/404NotFound.yaml
+    409:
+      $ref: ../components/responses/409Conflict.yaml
+    429:
+      $ref: ../components/responses/429TooManyRequests.yaml
+    500:
+      $ref: ../components/responses/500InternalServerError.yaml
+    503:
+      $ref: ../components/responses/503ServiceUnavailable.yaml

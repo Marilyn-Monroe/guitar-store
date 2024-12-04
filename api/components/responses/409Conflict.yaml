@@ -1,0 +1,5 @@
+description: Any message which should help the user to resolve the conflict.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Message.yaml

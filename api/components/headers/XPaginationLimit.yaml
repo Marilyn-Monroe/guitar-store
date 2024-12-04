@@ -1,0 +1,4 @@
+description: Number of returned items
+schema:
+  type: integer
+  format: int64

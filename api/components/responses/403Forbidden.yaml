@@ -1,0 +1,5 @@
+description: The request is understood, but it has been refused or access is not allowed.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Message.yaml

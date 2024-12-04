@@ -1,0 +1,5 @@
+description: The request was invalid or cannot be otherwise served.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/ValidationError.yaml

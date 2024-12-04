@@ -1,0 +1,5 @@
+in: query
+name: sort
+schema:
+  type: string
+description: Sort guitars by a specific field

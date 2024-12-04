@@ -1,0 +1,35 @@
+get:
+  summary: Get promocode information by code
+  operationId: getPromocodeByCode
+  tags:
+    - promocode
+  parameters:
+    - in: query
+      name: 'code'
+      required: true
+      schema:
+        type: string
+      description: The promocode code to retrieve information for
+  responses:
+    200:
+      description: Promocode details
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Promocode.yaml
+    400:
+      $ref: ../components/responses/400BadRequest.yaml
+    401:
+      $ref: ../components/responses/401Unauthorized.yaml
+    403:
+      $ref: ../components/responses/403Forbidden.yaml
+    404:
+      $ref: ../components/responses/404NotFound.yaml
+    409:
+      $ref: ../components/responses/409Conflict.yaml
+    429:
+      $ref: ../components/responses/429TooManyRequests.yaml
+    500:
+      $ref: ../components/responses/500InternalServerError.yaml
+    503:
+      $ref: ../components/responses/503ServiceUnavailable.yaml

@@ -1,0 +1,6 @@
+description: Review to create
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Review.yaml

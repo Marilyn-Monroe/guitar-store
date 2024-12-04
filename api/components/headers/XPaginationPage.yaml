@@ -1,0 +1,4 @@
+description: Current page number
+schema:
+  type: integer
+  format: int64

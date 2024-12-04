@@ -1,0 +1,12 @@
+type: object
+properties:
+  user_id:
+    type: string
+    format: uuid
+  guitar_id:
+    type: string
+    format: uuid
+  quantity:
+    type: integer
+    format: int64
+    minimum: 0

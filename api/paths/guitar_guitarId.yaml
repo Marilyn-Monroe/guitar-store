@@ -1,0 +1,36 @@
+get:
+  summary: Get a single guitar
+  operationId: getGuitarById
+  tags:
+    - guitar
+  parameters:
+    - in: path
+      name: guitarId
+      required: true
+      schema:
+        type: string
+        format: uuid
+      description: ID of the guitar
+  responses:
+    200:
+      description: Guitar details
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Guitar.yaml
+    400:
+      $ref: ../components/responses/400BadRequest.yaml
+    401:
+      $ref: ../components/responses/401Unauthorized.yaml
+    403:
+      $ref: ../components/responses/403Forbidden.yaml
+    404:
+      $ref: ../components/responses/404NotFound.yaml
+    409:
+      $ref: ../components/responses/409Conflict.yaml
+    429:
+      $ref: ../components/responses/429TooManyRequests.yaml
+    500:
+      $ref: ../components/responses/500InternalServerError.yaml
+    503:
+      $ref: ../components/responses/503ServiceUnavailable.yaml

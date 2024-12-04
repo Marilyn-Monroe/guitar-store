@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: Guitar Store
+  description: A simple API for guitar store
+  version: 1.0.0
+servers:
+  - url: /api/v3
+tags:
+  - name: guitar
+    description: Operations related to guitars
+  - name: promocode
+    description: Operations related to promocodes
+  - name: review
+    description: Operations related to reviews
+  - name: cartItem
+    description: Operations related to cart items
+paths:
+  /guitar:
+    $ref: paths/guitar.yaml
+  /guitar/{guitarId}:
+    $ref: paths/guitar_guitarId.yaml
+  /promocode/findByCode:
+    $ref: paths/promocode_findByCode.yaml
+  /review:
+    $ref: paths/review.yaml
+  /cartItem:
+    $ref: paths/cartItem.yaml
+components:
+  responses:
+    200:
+      $ref: components/responses/SuccessMessage.yaml
+    400BadRequest:
+      $ref: components/responses/400BadRequest.yaml
+    401Unauthorized:
+      $ref: components/responses/401Unauthorized.yaml
+    403Forbidden:
+      $ref: components/responses/403Forbidden.yaml
+    404NotFound:
+      $ref: components/responses/404NotFound.yaml
+    409Conflict:
+      $ref: components/responses/409Conflict.yaml
+    429TooManyRequests:
+      $ref: components/responses/429TooManyRequests.yaml
+    500InternalServerError:
+      $ref: components/responses/500InternalServerError.yaml
+    503ServiceUnavailable:
+      $ref: components/responses/503ServiceUnavailable.yaml

@@ -1,0 +1,5 @@
+description: The server is up, but overloaded with requests. Try again later.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Message.yaml
