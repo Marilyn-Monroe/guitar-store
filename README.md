@@ -14,7 +14,7 @@
 1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/Marilyn-Monroe/guitar-store
-   cd guitar-shop
+   cd guitar-store
 
 2. Разверните окружение для разработки:
    ```bash
